@@ -1,5 +1,14 @@
 # Horse vs Human Classifier API
 
+#Virtualizaciòn
+```arduino
+python3 -m venv venv
+source venv/bin/activate
+```
+
+
+
+
 API simple de FastAPI para clasificar imágenes entre caballos y humanos usando una CNN entrenada con TensorFlow.
 
 ## Instalación
@@ -77,4 +86,5 @@ horse_human_api/
 ├── requirements.txt           # Dependencias
 ├── horse_human_classifier.h5  # Modelo entrenado (debes colocarlo aquí)
 └── README.md                  # Esta documentación
+
 ```
