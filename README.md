@@ -1,4 +1,4 @@
-# Horse vs Human Classifier API
+# Diabetes o no diabetes
 
 #Virtualizaciòn
 ```arduino
@@ -74,4 +74,5 @@ horse_human_api/
 └── README.md                  # Esta documentación
 
 ```
+
 
