@@ -77,8 +77,17 @@ async def root():
         "input_format": {"features": "[list of N numeric values]"},
         "output": "1 or 0"
     }
-
+    
+@app.get("/Health")
+async def root():
+    return {
+        "message": "Modelo Tabular API",
+        "status": "active",
+        "input_format": {"features": "[list of N numeric values]"},
+        "output": "1 or 0"
+    }
 
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
