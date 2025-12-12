@@ -7,8 +7,6 @@ source venv/bin/activate
 ```
 
 
-
-
 API simple de FastAPI para clasificar imágenes entre caballos y humanos usando una CNN entrenada con TensorFlow.
 
 ## Instalación
@@ -45,34 +43,22 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 curl http://localhost:8000/health
 
 # Predecir imagen
-curl -X POST "http://localhost:8000/predict" \
-     -H "accept: application/json" \
-     -H "Content-Type: multipart/form-data" \
-     -F "file=@imagen_caballo.jpg"
+curl -X POST "http://localhost:8000/predict"  -H "Content-Type: application/json" -d '{ "features": [5.1, 130, 75, 0, 1, 0, 0, 1]}'
 ```
 
 ### Ejemplo de respuesta:
 
 ```json
 {
-  "class": 0,
-  "class_name": "horse",
-  "confidence": 0.9999,
-  "probabilities": {
-    "horse": 0.9999,
-    "human": 0.0001
-  },
-  "image_info": {
-    "filename": "imagen_caballo.jpg",
-    "content_type": "image/jpeg",
-    "processed_shape": [1, 300, 300, 1]
-  }
+    "target": "diabetes",
+    "probability": 0.9552638530731201,
+    "prediction": 1
 }
 ```
 
 ## Clases:
-- **0**: Caballo (horse)
-- **1**: Humano (human)
+- **0**: Sin Diabetes
+- **1**: Con Diabetes
 
 ## Documentación interactiva:
 Una vez ejecutada la API, visita:
@@ -88,3 +74,4 @@ horse_human_api/
 └── README.md                  # Esta documentación
 
 ```
+
